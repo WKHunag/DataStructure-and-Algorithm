@@ -8,28 +8,33 @@
 class LinkedList;
 
 class Node{
-private:
-    int value;
-    Node *next;
+
 public:
     Node():value(0),next(nullptr){};
     Node(int a):value(a),next(nullptr){};
+
+    int value;
+    Node *next;
 
     friend class LinkedList;
 };
 
 class LinkedList{
 private:
+    int size;
     Node *first;
+    Node *last;
+
 public:
-public:
-    LinkedList();;
-    void PrintList();           // 印出list的所有資料
-    void Push_front(int x);     // 在list的開頭新增node
-    void Push_back(int x);      // 在list的尾巴新增node
-    void Delete(int x);         // 刪除list中的 int x
-    void Clear();               // 把整串list刪除
-    void Reverse();             // 將list反轉: 7->3->14 => 14->3->7
+    LinkedList();
+    LinkedList(Node *head);
+    void PrintList();          
+    void GetSize(); // Print all the elements in the list
+    void Push_front(Node *front);     // Add a new element to the front of the list
+    void Push_back(Node *back);      // Add a new element to the back of the list
+    void Delete(Node *node);         // Delete a node from the list
+    void Clear();               // Delete all the elements in the list
+    void Reverse();             // Reverse the list
 };
 
 
