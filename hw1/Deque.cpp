@@ -1,74 +1,85 @@
-/*
-	Homework1
+#include <iostream>
+#include "Deque.h"
 
-	1. Create a class inherit the below class Deque
-	   by using array data structure.
-	2. Create a class inherit the below class Deque
-	   by using linked list data structure.
+//template <class T>
+Deque_LL :: Deque_LL(){
+    length = 0;
+    first = nullptr;
+    last = nullptr;
+}
+Deque_LL ::Deque_LL(Node *head) {
+    length = 1;
+    first = head;
+    last = head;
+}
 
-	Requirement:
-	You are not allowed to use any C's/C++'s built in data structure class,
-	including dynamic array, vector.
-	All you can use are basic array and the classes built by yourselves.
-	The only function you can to use from C++'s libraries is "cout" to print content on the console.
-*/
 
-/// <summary>
-/// double end queue
-/// </summary>
-/// <typeparam name="T"> the type of the item that the deque hold</typeparam>
-template<class T> 
-class Deque
-{
-public:
-	/// <summary>
-	/// return quantity of items in the Deque
-	/// </summary>
-	/// <returns> quantity of items in the Deque </returns>
-	virtual int size() {}
+int Deque_LL :: size() {return length;};
 
-	/// <summary>
-	/// add the item at the beginning of the Deque
-	/// </summary>
-	/// <param name="item"></param>
-	virtual void addFirst(T item) {}
+void Deque_LL :: addFirst(Node *item) {
+    if(length == 0){
+        first = item;
+        last = item;
+    }else if( length == 1 ) {
+        item -> next = first;
+        first = item;
+        first -> next = last;
+        last -> pre = first;
+    }else{
+        item -> next = first;
+        first -> pre = item;
+        first = item;
+    }
+    length++;
+}
 
-	/// <summary>
-	/// add the item at the end of the Deque
-	/// </summary>
-	/// <param name="item"></param>
-	virtual void addLast(T item) {}
+void Deque_LL :: addLast(Node *item) {
+    if(length == 0){
+        last = item;
+        first = item;
+    }else if(length == 1){
+        last -> next = item;
+        last = item;
+        last -> pre = first;
+        first -> next = last;
+    }else{
+        last -> next = item;
+        item -> pre = last;
+        last = item;
+    }
+    length++;
+}
 
-	/// <summary>
-	/// return true if Deque is empty
-	/// </summary>
-	/// <returns> true if the Deque is empty </returns>
-	bool isEmpty() 
-	{
-		return size() == 0;
-	}
+void Deque_LL :: printDeque() {
+    for (Node *p = first; p != 0; p = p->next) {
+        std::cout << p->value << std::endl;
+    }
+}
 
-	/// <summary>
-	/// print out all items in the deque, seperate by the space, " "
-	/// </summary>
-	virtual void printDeque() {}
+bool Deque_LL::isEmpty() {
+    return length == 0;
+}
 
-	/// <summary>
-	/// remove the first item of the Deque
-	/// </summary>
-	/// <returns> the removed item </returns>
-	virtual T removeFirst() {}
+Node Deque_LL :: removeFirst() {
+    length--;
+    Node result = *first;
+    first = first -> next;
+    first -> pre = nullptr;
+    return result;
+}
 
-	/// <summary>
-	/// remove the last item of the Deque
-	/// </summary>
-	/// <returns> the removed item </returns>
-	virtual T removeLast() {}
+Node Deque_LL :: removeLast() {
+    length--;
+    Node result = *last;
+    last = last -> pre;
+    last -> next = nullptr;
+    return result;
+}
 
-	/// <summary>
-	/// given the index and return the item at the position given index
-	/// </summary>
-	/// <param name="index"></param>
-	/// <returns> the item at the index </returns>
-	virtual T get(int index) {}
-};
+Node Deque_LL :: get(int index) {
+    Node *result = first;
+    for (int i = 0; i < index; i++) {
+        result = result -> next;
+    }
+    return *result;
+}
