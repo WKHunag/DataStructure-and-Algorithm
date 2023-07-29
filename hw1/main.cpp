@@ -3,13 +3,12 @@
 using namespace std;
 
 int main() {
-    Node a = 5;
-    Node b = 10;
-    Node *head;
-    head = &a;
-    Deque_LL test;
-    test.addFirst(head);
-    test.addFirst(&b);
-    cout << test.get(1).value << endl;
+    int a = 5;
+    Deque_Arr queue;
+    queue.addLast(a);
+    queue.addLast(10);
+    queue.addFirst(0);
+    queue.removeLast();
+    queue.printDeque();
     return 0;
 }

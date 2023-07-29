@@ -38,13 +38,13 @@ public:
     /// add the item at the beginning of the Deque
     /// </summary>
     /// <param name="item"></param>
-    virtual void addFirst(T *item) {}
+    virtual void addFirst(T item) {}
 
     /// <summary>
     /// add the item at the end of the Deque
     /// </summary>
     /// <param name="item"></param>
-    virtual void addLast(T *item) {}
+    virtual void addLast(T item) {}
 
     /// <summary>
     /// return true if Deque is empty
@@ -102,8 +102,8 @@ public:
     Deque_LL(Node *head);
 
     int size() override;
-    void addFirst(Node *item) override;
-    void addLast(Node *item) override;
+    void addFirst(Node item) override;
+    void addLast(Node item) override;
     bool isEmpty() override;
     void printDeque() override;
     Node removeFirst() override;
@@ -111,7 +111,40 @@ public:
     Node get(int index) override;
 };
 
-//template class Node<int>;
-//template class Node<char>;
-//template class Node<double>;
+class Deque_Arr : public Deque<int> {
+private:
+    int capacity;
+    int pos1st;
+    int poslast;
+    int *queue;
+
+    bool isFull(){
+        return poslast + 1 == capacity;
+    };
+
+    void DoubleCapacityQueue(){
+        int newCapacity = capacity * 2;
+        int *newStart = new int[newCapacity];
+        int cur = -1;
+        for (int i = pos1st; i <= poslast; i++){
+            cur++;
+            newStart[cur] = queue[i];
+        }
+        pos1st = -1;
+        poslast = cur;
+        queue = newStart;
+    }
+
+public:
+    Deque_Arr();
+    int size() override;
+    void addFirst(int newFirst) override;
+    void addLast(int newLast) override;
+    bool isEmpty() override;
+    void printDeque() override;
+    int removeFirst() override;
+    int removeLast() override;
+    int get(int index) override;
+};
+
 #endif //HOMEWORK_DEQUE_H

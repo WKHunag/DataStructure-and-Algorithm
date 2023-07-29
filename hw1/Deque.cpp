@@ -16,36 +16,36 @@ Deque_LL ::Deque_LL(Node *head) {
 
 int Deque_LL :: size() {return length;};
 
-void Deque_LL :: addFirst(Node *item) {
+void Deque_LL :: addFirst(Node item) {
     if(length == 0){
-        first = item;
-        last = item;
+        first = &item;
+        last = &item;
     }else if( length == 1 ) {
-        item -> next = first;
-        first = item;
+        item.next = first;
+        first = &item;
         first -> next = last;
         last -> pre = first;
     }else{
-        item -> next = first;
-        first -> pre = item;
-        first = item;
+        item.next = first;
+        first -> pre = &item;
+        first = &item;
     }
     length++;
 }
 
-void Deque_LL :: addLast(Node *item) {
+void Deque_LL :: addLast(Node item) {
     if(length == 0){
-        last = item;
-        first = item;
+        last = &item;
+        first = &item;
     }else if(length == 1){
-        last -> next = item;
-        last = item;
+        last -> next = &item;
+        last = &item;
         last -> pre = first;
         first -> next = last;
     }else{
-        last -> next = item;
-        item -> pre = last;
-        last = item;
+        last -> next = &item;
+        item.pre = last;
+        last = &item;
     }
     length++;
 }
