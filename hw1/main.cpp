@@ -15,7 +15,7 @@ int main() {
     cout << queueArray.get(1) << endl;
     queueArray.printDeque();
 //    Linked List
-    Deque_LL queueLinkedList;
+    Deque_LL<int, Node> queueLinkedList;
     queueLinkedList.addFirst(Node(5));
     queueLinkedList.addLast(Node(10));
     queueLinkedList.addFirst(Node(0));

@@ -24,6 +24,8 @@
 /// double end queue
 /// </summary>
 /// <typeparam name="T"> the type of the item that the deque hold</typeparam>
+#include "Node.h"
+
 template<class T>
 class Deque
 {
@@ -80,35 +82,24 @@ public:
     virtual T get(int index) {}
 };
 
-
-class Node{
-public:
-    Node():value(0),next(nullptr),pre(nullptr){};
-    Node(int value):value(value),next(nullptr),pre(nullptr){};
-    int value;
-    Node *next;
-    Node *pre;
-
-    friend class Deque_LL;
-};
-
-class Deque_LL : public Deque<Node> {
+template<class T, template<class U> class Node>
+class Deque_LL : public Deque<T> {
 private:
     int length;
-    Node *first;
-    Node *last;
+    Node<T> *first;
+    Node<T> *last;
 public:
     Deque_LL();
-    Deque_LL(Node *head);
+    Deque_LL(Node<T> *head);
 
     int size() override;
-    void addFirst(Node item) override;
-    void addLast(Node item) override;
+    void addFirst(Node<T> item) override;
+    void addLast(Node<T> item) override;
     bool isEmpty() override;
-    void printDeque() override;
-    Node removeFirst() override;
-    Node removeLast() override;
-    Node get(int index) override;
+    void printDeque();
+    Node<T> removeFirst() override;
+    Node<T> removeLast() override;
+    Node<T> get(int index) override;
 };
 
 class Deque_Arr : public Deque<int> {
@@ -148,5 +139,18 @@ public:
     int removeLast() override;
     int get(int index) override;
 };
+
+template<> Deque_LL<int, Node> :: Deque_LL(){}
+template<> Deque_LL<double, Node> :: Deque_LL() {}
+template<> Deque_LL<char, Node> :: Deque_LL() {}
+int Deque_LL<int, Node> :: size(){};
+double Deque_LL<double, Node> :: size(){}
+char Deque_LL<char, Node> :: size(){}
+template<> void Deque_LL<int, Node> :: addFirst(Node<int> item) {};
+template<> void Deque_LL<int, Node> :: addLast(Node<int> item) {};
+template<> void Deque_LL<char, Node> ::addFirst(Node<char> item) {};
+template<> void Deque_LL<char, Node> :: addLast(Node<char> item) {};
+template<> void Deque_LL<double, Node> ::addFirst(Node<double> item) {};
+template<> void Deque_LL<double, Node> :: addLast(Node<double> item) {};
 
 #endif //HOMEWORK_DEQUE_H

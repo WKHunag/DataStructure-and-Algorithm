@@ -1,22 +1,25 @@
 #include <iostream>
 #include "Deque.h"
 
-//template <class T>
-Deque_LL :: Deque_LL(){
+template <class T, template<class U> class Node>
+Deque_LL<T, Node> :: Deque_LL(){
     length = 0;
     first = nullptr;
     last = nullptr;
 }
-Deque_LL ::Deque_LL(Node *head) {
+
+template <class T, template<class U> class Node>
+Deque_LL<T, Node> ::Deque_LL(Node<T> *head) {
     length = 1;
     first = head;
     last = head;
 }
 
+template <class T, template<class U> class Node>
+int Deque_LL<T, Node> :: size() {return length;};
 
-int Deque_LL :: size() {return length;};
-
-void Deque_LL :: addFirst(Node item) {
+template <class T, template<class U> class Node>
+void Deque_LL<T, Node> :: addFirst(Node<T> item) {
     if(length == 0){
         first = &item;
         last = &item;
@@ -33,7 +36,8 @@ void Deque_LL :: addFirst(Node item) {
     length++;
 }
 
-void Deque_LL :: addLast(Node item) {
+template <class T, template<class U> class Node>
+void Deque_LL<T, Node> :: addLast(Node<T> item) {
     if(length == 0){
         last = &item;
         first = &item;
@@ -50,34 +54,39 @@ void Deque_LL :: addLast(Node item) {
     length++;
 }
 
-void Deque_LL :: printDeque() {
-    for (Node *p = first; p != 0; p = p->next) {
+template <class T, template<class U> class Node>
+void Deque_LL<T, Node> :: printDeque() {
+    for (Node<T> *p = first; p != 0; p = p->next) {
         std::cout << p->value << std::endl;
     }
 }
 
-bool Deque_LL::isEmpty() {
+template <class T, template<class U> class Node>
+bool Deque_LL<T, Node> :: isEmpty() {
     return length == 0;
 }
 
-Node Deque_LL :: removeFirst() {
+template <class T, template<class U> class Node>
+Node<T> Deque_LL<T, Node> :: removeFirst() {
     length--;
-    Node result = *first;
+    Node<T> result = *first;
     first = first -> next;
     first -> pre = nullptr;
     return result;
 }
 
-Node Deque_LL :: removeLast() {
+template <class T, template<class U> class Node>
+Node<T> Deque_LL<T, Node> :: removeLast() {
     length--;
-    Node result = *last;
+    Node<T> result = *last;
     last = last -> pre;
     last -> next = nullptr;
     return result;
 }
 
-Node Deque_LL :: get(int index) {
-    Node *result = first;
+template <class T, template<class U> class Node>
+Node<T> Deque_LL<T, Node> :: get(int index) {
+    Node<T> *result = first;
     for (int i = 0; i < index; i++) {
         result = result -> next;
     }
