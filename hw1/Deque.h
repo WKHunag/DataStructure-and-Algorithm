@@ -84,7 +84,7 @@ public:
 class Node{
 public:
     Node():value(0),next(nullptr),pre(nullptr){};
-    Node(int a):value(a),next(nullptr),pre(nullptr){};
+    Node(int value):value(value),next(nullptr),pre(nullptr){};
     int value;
     Node *next;
     Node *pre;
@@ -116,6 +116,7 @@ private:
     int capacity;
     int pos1st;
     int poslast;
+    int max_capacity;
     int *queue;
 
     bool isFull(){
@@ -137,6 +138,7 @@ private:
 
 public:
     Deque_Arr();
+    Deque_Arr(int buffer);
     int size() override;
     void addFirst(int newFirst) override;
     void addLast(int newLast) override;
