@@ -8,6 +8,15 @@ Deque_Arr :: Deque_Arr() {
     capacity = 10;
     pos1st = -1;
     poslast = -1;
+    max_capacity = 200;
+    queue = new int[capacity];
+}
+
+Deque_Arr ::Deque_Arr(int buffer) {
+    capacity = 10;
+    poslast = -1;
+    pos1st = -1;
+    max_capacity = buffer;
     queue = new int[capacity];
 }
 
@@ -59,5 +68,5 @@ int Deque_Arr :: removeLast() {
 }
 
 int Deque_Arr :: get(int index){
-    return queue[index];
+    return queue[index-pos1st+1];
 }
