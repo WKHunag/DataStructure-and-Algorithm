@@ -82,8 +82,8 @@ public:
     virtual T get(int index) {}
 };
 
-template<class T, template<class U> class Node>
-class Deque_LL : public Deque<T> {
+template<typename T, template<typename U> class Node>
+class Deque_LL : public Deque<Node<T>> {
 private:
     int length;
     Node<T> *first;
@@ -96,11 +96,12 @@ public:
     void addFirst(Node<T> item) override;
     void addLast(Node<T> item) override;
     bool isEmpty() override;
-    void printDeque();
+    void printDeque() override;
     Node<T> removeFirst() override;
     Node<T> removeLast() override;
     Node<T> get(int index) override;
 };
+
 
 class Deque_Arr : public Deque<int> {
 private:
@@ -140,17 +141,5 @@ public:
     int get(int index) override;
 };
 
-template<> Deque_LL<int, Node> :: Deque_LL(){}
-template<> Deque_LL<double, Node> :: Deque_LL() {}
-template<> Deque_LL<char, Node> :: Deque_LL() {}
-int Deque_LL<int, Node> :: size(){};
-double Deque_LL<double, Node> :: size(){}
-char Deque_LL<char, Node> :: size(){}
-template<> void Deque_LL<int, Node> :: addFirst(Node<int> item) {};
-template<> void Deque_LL<int, Node> :: addLast(Node<int> item) {};
-template<> void Deque_LL<char, Node> ::addFirst(Node<char> item) {};
-template<> void Deque_LL<char, Node> :: addLast(Node<char> item) {};
-template<> void Deque_LL<double, Node> ::addFirst(Node<double> item) {};
-template<> void Deque_LL<double, Node> :: addLast(Node<double> item) {};
 
 #endif //HOMEWORK_DEQUE_H

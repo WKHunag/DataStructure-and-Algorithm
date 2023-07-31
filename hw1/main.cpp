@@ -16,10 +16,10 @@ int main() {
     queueArray.printDeque();
 //    Linked List
     Deque_LL<int, Node> queueLinkedList;
-    queueLinkedList.addFirst(Node(5));
-    queueLinkedList.addLast(Node(10));
-    queueLinkedList.addFirst(Node(0));
-    queueLinkedList.addLast(Node(15));
+    queueLinkedList.addFirst(5);
+    queueLinkedList.addLast(10);
+    queueLinkedList.addFirst(0);
+    queueLinkedList.addLast(15);
     queueLinkedList.removeLast();
     queueLinkedList.removeFirst();
     cout << "Double ended queue(implemented with linked list)" << endl;

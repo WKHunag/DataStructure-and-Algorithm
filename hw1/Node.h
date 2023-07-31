@@ -5,7 +5,7 @@
 #ifndef HOMEWORK_NODE_H
 #define HOMEWORK_NODE_H
 
-template <class T>
+template <typename T>
 class Node{
 public:
     Node();//:value(0),next(nullptr),pre(nullptr){};
@@ -14,17 +14,5 @@ public:
     Node *next = nullptr;
     Node *pre = nullptr;
 };
-
-template<> Node<int> :: Node(int value){
-
-}
-
-template<> Node<double> :: Node(double value){
-
-}
-
-template<> Node<char> :: Node(char value){
-
-}
 
 #endif //HOMEWORK_NODE_H
