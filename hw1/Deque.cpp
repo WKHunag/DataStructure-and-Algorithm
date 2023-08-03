@@ -1,48 +1,45 @@
 #include <iostream>
 #include "Deque.h"
-
-template<typename T, template<typename U> class Node>
-Deque_LL<T, Node> :: Deque_LL(){
+#pragma ignore unreachible
+template<typename T>
+Deque_LL<T> :: Deque_LL(){
     length = 0;
-    first = nullptr;
-    last = nullptr;
 }
 
-template<typename T, template<typename U> class Node>
-Deque_LL<T, Node> :: Deque_LL( Node<T> *head) {
+template<typename T>
+Deque_LL<T> :: Deque_LL(Node<T> head) {
     length = 1;
-    first = head;
-    last = head;
+    first = &head;
+    last = &head;
 }
 
-template<typename T, template<typename U> class Node>
-int Deque_LL<T, Node> :: size() {return length;};
+template<typename T>
+int Deque_LL<T> :: size() {return length;};
 
-template<typename T, template<typename U> class Node>
-void Deque_LL<T, Node> :: addFirst(Node<T> item) {
-    if(length == 0){
+template<typename T>
+void Deque_LL<T> :: addFirst(Node<T> item) {
+    if( length == 0 ){
         first = &item;
         last = &item;
-    }else if( length == 1 ) {
-        item.next = first;
+    } else if (length == 1){
         first = &item;
         first -> next = last;
         last -> pre = first;
     }else{
-        item.next = first;
-        first -> pre = &item;
-        first = &item;
+        Node<T> *cur = &item;
+        cur -> next = first;
+        first -> pre = cur;
+        first = cur;
     }
     length++;
 }
 
-template<typename T, template<typename U> class Node>
-void Deque_LL<T, Node> :: addLast(Node<T> item) {
+template<typename T>
+void Deque_LL<T> :: addLast(Node<T> item) {
     if(length == 0){
-        last = &item;
         first = &item;
-    }else if(length == 1){
-        last -> next = &item;
+        last = &item;
+    }else if (length == 1){
         last = &item;
         last -> pre = first;
         first -> next = last;
@@ -54,29 +51,27 @@ void Deque_LL<T, Node> :: addLast(Node<T> item) {
     length++;
 }
 
-template<typename T, template<typename U> class Node>
-void Deque_LL<T, Node> :: printDeque() {
-    for (Node<T> *p = first; p != 0; p = p->next) {
-        std::cout << p->value << std::endl;
+template<typename T>
+void Deque_LL<T> :: printDeque() {
+    if (length == 0) {
+        std::cout << "The queue is empty" << std::endl;
+    }
+    for (Node<T> *p = first; p->notNull; p = p->next) {
+        std::cout << p -> getValue() << std::endl;
     }
 }
 
-template<typename T, template<typename U> class Node>
-bool Deque_LL<T, Node> :: isEmpty() {
-    return length == 0;
-}
-
-template<typename T, template<typename U> class Node>
-Node<T> Deque_LL<T, Node> :: removeFirst() {
+template<typename T>
+Node<T> Deque_LL<T> :: removeFirst() {
     length--;
     Node<T> result = *first;
     first = first -> next;
-    first -> pre = nullptr;
+    first -> pre = new Node<T>();
     return result;
 }
 
-template<typename T, template<typename U> class Node>
-Node<T> Deque_LL<T, Node> :: removeLast() {
+template<typename T>
+Node<T> Deque_LL<T> :: removeLast() {
     length--;
     Node<T> result = *last;
     last = last -> pre;
@@ -84,15 +79,19 @@ Node<T> Deque_LL<T, Node> :: removeLast() {
     return result;
 }
 
-template<typename T, template<typename U> class Node>
-Node<T> Deque_LL<T, Node> :: get(int index) {
-    Node<T> *result = first;
+template<typename T>
+Node<T> Deque_LL<T> :: get(int index) {
+    if (length == 0) {
+        return Node<T>();
+    }
+    Node<T> *result = first->next;
     for (int i = 0; i < index; i++) {
         result = result -> next;
     }
     return *result;
 }
 
-Deque_LL<int, Node> intDeque;
-Deque_LL<double, Node> doubleDeque;
-Deque_LL<char, Node> charDeque;
+template struct Deque_LL<int>;
+template struct Deque_LL<double>;
+template struct Deque_LL<char>;
+//#pragma clang diagnostic pop

@@ -7,12 +7,14 @@
 
 template <typename T>
 class Node{
-public:
-    Node();//:value(0),next(nullptr),pre(nullptr){};
-    Node(T value);//:value(value),next(nullptr),pre(nullptr){};
     T value;
-    Node *next = nullptr;
-    Node *pre = nullptr;
+public:
+    bool notNull;
+    Node<T> *next = nullptr;
+    Node<T> *pre = nullptr;
+    Node();//:value(0),next(nullptr),pre(nullptr){};
+    Node(T input);//:value(value),next(nullptr),pre(nullptr){};
+    T getValue();
 };
 
 #endif //HOMEWORK_NODE_H
