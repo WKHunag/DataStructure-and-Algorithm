@@ -26,7 +26,7 @@
 /// <typeparam name="T"> the type of the item that the deque hold</typeparam>
 #include "Node.h"
 
-template<class T>
+template<typename T>
 class Deque
 {
 public:
@@ -82,20 +82,23 @@ public:
     virtual T get(int index) {}
 };
 
-template<typename T, template<typename U> class Node>
+template struct Deque<int>;
+template struct Deque<double>;
+template struct Deque<char>;
+
+template<typename T>
 class Deque_LL : public Deque<Node<T>> {
 private:
     int length;
-    Node<T> *first;
-    Node<T> *last;
+    Node<T> *first = new Node<T>();
+    Node<T> *last = new Node<T>();
 public:
     Deque_LL();
-    Deque_LL(Node<T> *head);
+    Deque_LL(Node<T> head);
 
     int size() override;
     void addFirst(Node<T> item) override;
     void addLast(Node<T> item) override;
-    bool isEmpty() override;
     void printDeque() override;
     Node<T> removeFirst() override;
     Node<T> removeLast() override;
@@ -108,7 +111,6 @@ private:
     int capacity;
     int pos1st;
     int poslast;
-    int max_capacity;
     int *queue;
 
     bool isFull(){
@@ -130,7 +132,6 @@ private:
 
 public:
     Deque_Arr();
-    Deque_Arr(int buffer);
     int size() override;
     void addFirst(int newFirst) override;
     void addLast(int newLast) override;

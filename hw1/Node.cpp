@@ -6,15 +6,21 @@
 
 template <typename T>
 Node<T> :: Node() {
+    notNull = false;
     value = 0;
 }
 
 template <typename T>
-Node<T> :: Node(T value) {
-    value = value;
+Node<T> :: Node(T input) {
+    notNull = true;
+    value = input;
 }
 
+template <typename T>
+T Node<T>::getValue() {
+    return value;
+}
 
-Node<int> nodeInt;
-Node<double> nodeDouble;
-Node<char> nodeChar;
+template struct Node<int>;
+template struct Node<char>;
+template struct Node<double>;
