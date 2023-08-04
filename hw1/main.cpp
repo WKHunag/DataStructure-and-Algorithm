@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
 //    Arrar
-    Deque_Arr queueArray;
+    Deque_Arr<int> queueArray;
     queueArray.addFirst(5);
     queueArray.addLast(10);
     queueArray.addFirst(0);
