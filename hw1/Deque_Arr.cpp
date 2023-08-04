@@ -4,18 +4,21 @@
 #include <iostream>
 #include "Deque.h"
 
-Deque_Arr :: Deque_Arr() {
+template<typename T>
+Deque_Arr<T> :: Deque_Arr() {
     capacity = 10;
     pos1st = -1;
     poslast = -1;
     queue = new int[capacity];
 }
 
-int Deque_Arr :: size(){
+template<typename T>
+int Deque_Arr<T> :: size(){
     return poslast - pos1st;
 }
 
-void Deque_Arr :: addFirst(int newFirst) {
+template<typename T>
+void Deque_Arr<T> :: addFirst(T newFirst) {
     if(isFull()){
         DoubleCapacityQueue();
     }
@@ -26,7 +29,8 @@ void Deque_Arr :: addFirst(int newFirst) {
     queue[0] = newFirst;
 }
 
-void Deque_Arr :: addLast(int newLast) {
+template<typename T>
+void Deque_Arr<T> :: addLast(T newLast) {
     if(isFull()){
         DoubleCapacityQueue();
     }
@@ -34,30 +38,39 @@ void Deque_Arr :: addLast(int newLast) {
     queue[poslast] = newLast;
 }
 
-bool Deque_Arr :: isEmpty() {
+template<typename T>
+bool Deque_Arr<T> :: isEmpty() {
     return not isFull();
 }
 
-void Deque_Arr :: printDeque() {
+template<typename T>
+void Deque_Arr<T> :: printDeque() {
     for (int i = pos1st+1; i <= poslast; i++){
         std::cout << queue[i] << std::endl;
     }
 }
 
-int Deque_Arr :: removeFirst() {
-    int first = queue[pos1st+1];
+template<typename T>
+T Deque_Arr<T> :: removeFirst() {
+    T first = queue[pos1st+1];
     pos1st ++;
     queue = &queue[pos1st];
     return first;
 }
 
-int Deque_Arr :: removeLast() {
-    int last = queue[poslast];
+template<typename T>
+T Deque_Arr<T> :: removeLast() {
+    T last = queue[poslast];
     queue[poslast] = 0;
     poslast--;
     return last;
 }
 
-int Deque_Arr :: get(int index){
+template<typename T>
+T Deque_Arr<T> :: get(int index){
     return queue[index-pos1st+1];
 }
+
+template struct Deque_Arr<int>;
+template struct Deque_Arr<double>;
+template struct Deque_Arr<char>;

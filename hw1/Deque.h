@@ -105,8 +105,8 @@ public:
     Node<T> get(int index) override;
 };
 
-
-class Deque_Arr : public Deque<int> {
+template <typename T>
+class Deque_Arr : public Deque<T> {
 private:
     int capacity;
     int pos1st;
@@ -132,14 +132,15 @@ private:
 
 public:
     Deque_Arr();
+
     int size() override;
-    void addFirst(int newFirst) override;
-    void addLast(int newLast) override;
+    void addFirst(T newFirst) override;
+    void addLast(T newLast) override;
     bool isEmpty() override;
     void printDeque() override;
-    int removeFirst() override;
-    int removeLast() override;
-    int get(int index) override;
+    T removeFirst() override;
+    T removeLast() override;
+    T get(int index) override;
 };
 
 
