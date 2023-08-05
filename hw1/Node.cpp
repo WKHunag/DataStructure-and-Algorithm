@@ -16,6 +16,10 @@ Node<T> :: Node(T input) {
     value = input;
 }
 
+/*
+    what is the difference between isNull and value = 0?
+    why not set value = NULL if isNull?
+*/
 template <typename T>
 T Node<T>::getValue() {
     return value;

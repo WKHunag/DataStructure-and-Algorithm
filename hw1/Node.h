@@ -9,6 +9,10 @@ template <typename T>
 class Node{
     T value;
 public:
+    /*
+        why need the variable not null?
+        normally, we will not allow any member variable set to be public.
+    */
     bool notNull;
     Node<T> *next = nullptr;
     Node<T> *pre = nullptr;

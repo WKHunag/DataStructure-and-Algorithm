@@ -38,6 +38,9 @@ void Deque_Arr<T> :: addLast(T newLast) {
     queue[poslast] = newLast;
 }
 
+/*
+    not full doesn't mean is empty.
+*/
 template<typename T>
 bool Deque_Arr<T> :: isEmpty() {
     return not isFull();
@@ -54,6 +57,10 @@ template<typename T>
 T Deque_Arr<T> :: removeFirst() {
     T first = queue[pos1st+1];
     pos1st ++;
+    /*
+        should be pos1st+1
+        eventually will decrease the length of the array length
+    */
     queue = &queue[pos1st];
     return first;
 }
