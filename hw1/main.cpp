@@ -8,7 +8,13 @@ int main() {
     queueArray.addFirst(5);
     queueArray.addLast(10);
     queueArray.addFirst(0);
+    /*
+        unnecessary double brackets
+    */
     queueArray.addLast((15));
+    /*
+        no need to keep the unnecessary comment
+    */
 //    queueArray.removeLast();
 //    queueArray.removeFirst();
     cout << "Double ended queue(implemented with array):" << endl;

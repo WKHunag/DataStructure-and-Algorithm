@@ -82,14 +82,23 @@ public:
     virtual T get(int index) {}
 };
 
+/*
+    what is the purpose of these struct?
+*/
 template struct Deque<int>;
 template struct Deque<double>;
 template struct Deque<char>;
 
+/*
+    why Deque<Node<T>>? but not Deque<T>?
+*/
 template<typename T>
 class Deque_LL : public Deque<Node<T>> {
 private:
     int length;
+    /*
+        never release the memory of these 2 nodes?
+    */
     Node<T> *first = new Node<T>();
     Node<T> *last = new Node<T>();
 public:
@@ -117,6 +126,9 @@ private:
         return poslast + 1 == capacity;
     };
 
+    /*
+        did not release the memory of origin queue
+    */
     void DoubleCapacityQueue(){
         int newCapacity = capacity * 2;
         int *newStart = new int[newCapacity];

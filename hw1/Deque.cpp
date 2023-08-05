@@ -1,3 +1,7 @@
+/*
+    why not name this file to Deque_LL.cpp?
+*/
+
 #include <iostream>
 #include "Deque.h"
 #pragma ignore unreachible
@@ -18,9 +22,16 @@ int Deque_LL<T> :: size() {return length;};
 
 template<typename T>
 void Deque_LL<T> :: addFirst(Node<T> item) {
+    /*
+        unify coding style
+        try not use if eles if possible
+    */
     if( length == 0 ){
         first = &item;
         last = &item;
+    /*
+        unnecessary else if
+    */
     } else if (length == 1){
         first = &item;
         first -> next = last;
@@ -63,6 +74,12 @@ void Deque_LL<T> :: printDeque() {
 
 template<typename T>
 Node<T> Deque_LL<T> :: removeFirst() {
+    /*
+        what happened if call removeFirst() while size = 0?
+        need to modify result -> next
+        different rule in removeFirst() and removeLast()
+        new Node<T>() v.s. nullptr
+    */
     length--;
     Node<T> result = *first;
     first = first -> next;
@@ -81,9 +98,15 @@ Node<T> Deque_LL<T> :: removeLast() {
 
 template<typename T>
 Node<T> Deque_LL<T> :: get(int index) {
+    /*
+        why return Node<T>() but not nullptr?
+    */
     if (length == 0) {
         return Node<T>();
     }
+    /*
+        return first->next when index = 0?
+    */
     Node<T> *result = first->next;
     for (int i = 0; i < index; i++) {
         result = result -> next;
