@@ -5,16 +5,15 @@
 #ifndef HOMEWORK_NODE_H
 #define HOMEWORK_NODE_H
 
-template <typename T>
+template<typename T>
 class Node{
-    T value;
 public:
-    bool notNull;
+    T value = {};
     Node<T> *next = nullptr;
     Node<T> *pre = nullptr;
-    Node();//:value(0),next(nullptr),pre(nullptr){};
-    Node(T input);//:value(value),next(nullptr),pre(nullptr){};
-    T getValue();
-};
 
+    Node();
+    Node(T item);
+};
+#include "Node.tpp"
 #endif //HOMEWORK_NODE_H

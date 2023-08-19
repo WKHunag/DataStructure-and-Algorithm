@@ -24,7 +24,6 @@
 /// double end queue
 /// </summary>
 /// <typeparam name="T"> the type of the item that the deque hold</typeparam>
-#include "Node.h"
 
 template<typename T>
 class Deque
@@ -34,114 +33,51 @@ public:
     /// return quantity of items in the Deque
     /// </summary>
     /// <returns> quantity of items in the Deque </returns>
-    virtual int size() {}
+    virtual int size() const = 0;
 
     /// <summary>
     /// add the item at the beginning of the Deque
     /// </summary>
     /// <param name="item"></param>
-    virtual void addFirst(T item) {}
+    virtual void addFirst(T item) = 0;
 
     /// <summary>
     /// add the item at the end of the Deque
     /// </summary>
     /// <param name="item"></param>
-    virtual void addLast(T item) {}
+    virtual void addLast(T item) = 0;
 
     /// <summary>
     /// return true if Deque is empty
     /// </summary>
     /// <returns> true if the Deque is empty </returns>
-    virtual bool isEmpty()
-    {
-        return size() == 0;
-    }
+    virtual bool isEmpty() const = 0;
 
     /// <summary>
     /// print out all items in the deque, seperate by the space, " "
     /// </summary>
-    virtual void printDeque() {}
+    virtual void printDeque() const = 0;
 
     /// <summary>
     /// remove the first item of the Deque
     /// </summary>
     /// <returns> the removed item </returns>
-    virtual T removeFirst() {}
+    virtual T removeFirst() = 0;
 
     /// <summary>
     /// remove the last item of the Deque
     /// </summary>
     /// <returns> the removed item </returns>
-    virtual T removeLast() {}
+    virtual T removeLast() = 0;
 
     /// <summary>
     /// given the index and return the item at the position given index
     /// </summary>
     /// <param name="index"></param>
     /// <returns> the item at the index </returns>
-    virtual T get(int index) {}
+    virtual T get(int index) const = 0;
+
+
 };
-
-template struct Deque<int>;
-template struct Deque<double>;
-template struct Deque<char>;
-
-template<typename T>
-class Deque_LL : public Deque<Node<T>> {
-private:
-    int length;
-    Node<T> *first = new Node<T>();
-    Node<T> *last = new Node<T>();
-public:
-    Deque_LL();
-    Deque_LL(Node<T> head);
-
-    int size() override;
-    void addFirst(Node<T> item) override;
-    void addLast(Node<T> item) override;
-    void printDeque() override;
-    Node<T> removeFirst() override;
-    Node<T> removeLast() override;
-    Node<T> get(int index) override;
-};
-
-template <typename T>
-class Deque_Arr : public Deque<T> {
-private:
-    int capacity;
-    int pos1st;
-    int poslast;
-    int *queue;
-
-    bool isFull(){
-        return poslast + 1 == capacity;
-    };
-
-    void DoubleCapacityQueue(){
-        int newCapacity = capacity * 2;
-        int *newStart = new int[newCapacity];
-        int cur = -1;
-        for (int i = pos1st; i <= poslast; i++){
-            cur++;
-            newStart[cur] = queue[i];
-        }
-        pos1st = -1;
-        poslast = cur;
-        queue = newStart;
-    }
-
-public:
-    Deque_Arr();
-
-    int size() override;
-    void addFirst(T newFirst) override;
-    void addLast(T newLast) override;
-    bool isEmpty() override;
-    void printDeque() override;
-    T removeFirst() override;
-    T removeLast() override;
-    T get(int index) override;
-};
-
 
 #endif //HOMEWORK_DEQUE_H
