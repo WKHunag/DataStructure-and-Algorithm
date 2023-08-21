@@ -4,10 +4,8 @@
 
 int main() {
     BST<int> *Tree;
-    int a = 5;
-    int b = 2;
-    Tree -> insertion(a);
-    Tree -> insertion(b);
+    Tree -> insertion(5);
+    Tree -> insertion(2);
     Tree -> printTree();
     return 0;
 }

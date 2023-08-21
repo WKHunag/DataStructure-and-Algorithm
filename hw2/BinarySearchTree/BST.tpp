@@ -12,7 +12,6 @@ void BST<T>::CuttingDown(TreeNode<T> *node) {
     if (node != 0) {
         CuttingDown(node -> left);
         CuttingDown(node -> right);
-        ~node;
     }
 }
 

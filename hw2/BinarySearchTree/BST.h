@@ -14,6 +14,7 @@ class BST : public BinarySearchTree<T> {
 private:
     TreeNode<T> *root;
     int quantity = 0;
+
     TreeNode<T> *inserting(TreeNode<T> *node, TreeNode<T> *newParent, const T& item);
     void InOrder(TreeNode<T> *node) const;
     void CuttingDown(TreeNode<T> *node);

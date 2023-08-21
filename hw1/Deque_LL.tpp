@@ -54,7 +54,7 @@ T Deque_LL<T>::removeFirst() {
     } else {
         T poppedValue = first -> value;
         first = first -> next;
-        first -> pre = nullptr;
+        delete first -> pre;
         length--;
         return poppedValue;
     }
@@ -67,7 +67,7 @@ T Deque_LL<T>::removeLast() {
     } else {
         T poppedValue = last -> value;
         last = last -> pre;
-        last -> next = nullptr;
+        delete last -> next;
         length--;
         return poppedValue;
     }
@@ -75,7 +75,7 @@ T Deque_LL<T>::removeLast() {
 
 template<typename T>
 T Deque_LL<T>::get(int index) const {
-    if (isEmpty() || index < 0 || index > length) {
+    if (index < 0 || index >= length) {
         throw std::runtime_error("Index out of the range.");
     }
 

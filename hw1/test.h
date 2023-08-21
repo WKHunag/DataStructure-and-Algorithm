@@ -4,18 +4,18 @@
 //
 //#ifndef HOMEWORK_TEST_H
 //#define HOMEWORK_TEST_H
+//#pragma once
+//#include <fstream>
+//#include <string>
+//#include <sstream>
 //#include "Deque.h"
 //
-//template<class T>
-//class test {
-//public:
-//    bool TestAddFirst();
-//    bool TestAddLast();
-//    bool TestRemoveFirst();
-//    bool TestRemoveLast();
-//    bool TestGet();
+//template<typename T>
+//void Test(Deque<T> &sample, const std::string &testCase)
+//{
+//
 //};
 //
-//test<int>;
 //
+//#include "test.tpp"
 //#endif //HOMEWORK_TEST_H

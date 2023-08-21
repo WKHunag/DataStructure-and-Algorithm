@@ -1,7 +1,8 @@
+#pragma once
 #include <iostream>
 #include "Deque.h"
 #include "Node.h"
-#pragma once
+
 
 template<typename T>
 class Deque_LL : public Deque<T> {

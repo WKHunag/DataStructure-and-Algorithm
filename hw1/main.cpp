@@ -6,33 +6,34 @@ using namespace std;
 
 int main() {
 //    Arrar
-    Deque_Arr<int> queueArray;
-    queueArray.addFirst(5);
-    queueArray.addFirst(10);
-    queueArray.addLast(0);
-    queueArray.addLast(15);
-    cout << "Double ended queue(implemented with array):" << endl;
-    queueArray.printDeque();
-    queueArray.removeLast();
-    queueArray.removeFirst();
-    cout << "Double ended queue after remove elements(implemented with array):" << endl;
-    queueArray.printDeque();
-    cout << "The first element in the queue: \n" << queueArray.get(1) << endl;
-
-    cout << endl;
-
+    Deque<int> *queue = new Deque_Arr<int>();
 //    Linked List
-    Deque_LL<int> queueLinkedList;
-    queueLinkedList.addFirst(5);
-    queueLinkedList.addFirst(10);
-    queueLinkedList.addLast(0);
-    queueLinkedList.addLast(15);
-    cout << "Double ended queue(implemented with linked list):" << endl;
-    queueLinkedList.printDeque();
-    queueLinkedList.removeLast();
-    queueLinkedList.removeFirst();
-    cout << "Double ended queue after remove elements(implemented with linked list):" << endl;
-    queueLinkedList.printDeque();
-    cout << "The first element in the queue: \n" << queueLinkedList.get(1) << endl;
+//    Deque<int> *queue = new Deque_LL<int>();
+
+    queue -> addFirst(5);
+    queue -> addFirst(10);
+    queue -> addLast(0);
+    queue -> addLast(15);
+    queue -> addFirst(5);
+    queue -> addFirst(10);
+    queue -> addLast(0);
+    queue -> addLast(15);
+    queue -> addFirst(5);
+    queue -> addFirst(10);
+    queue -> addLast(0);
+    queue -> addLast(15);
+    cout << "Double ended queue(implemented with array):" << endl;
+    queue -> printDeque();
+    queue -> removeLast();
+    queue -> removeFirst();
+    queue -> removeFirst();
+    queue -> removeFirst();
+    queue -> removeFirst();
+    queue -> removeFirst();
+    queue -> removeFirst();
+    cout << "Double ended queue after remove elements(implemented with array):" << endl;
+    queue -> printDeque();
+    cout << "The first element in the queue: \n" << queue -> get(0) << endl;
+
     return 0;
 }
