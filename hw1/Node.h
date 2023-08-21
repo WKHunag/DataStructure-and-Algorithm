@@ -14,6 +14,7 @@ public:
 
     Node();
     Node(T item);
+    ~Node();
 };
 #include "Node.tpp"
 #endif //HOMEWORK_NODE_H

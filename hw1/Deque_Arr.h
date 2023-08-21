@@ -1,26 +1,27 @@
 //
 // Created by 黃威凱 on 2023/7/29.
 //
+#pragma once
 #include <iostream>
 #include "Deque.h"
-#pragma once
+
 
 template <typename T>
 class Deque_Arr : public Deque<T> {
 private:
     T* arr;
-    int headIndex = -1;
-    int tailIndex = -1;
     int capacity;
+    int headIndex = capacity - 1;
+    int tailIndex = 0;
     int length = 0;
 
-    void resize(int newCapacity);
+    void resize();
 
 public:
     Deque_Arr(int initialCapacity = 10);
     int size() const override;
     bool isEmpty() const override;
-    bool isFull();
+    bool isFull() const;
     void addFirst(T newFirst) override;
     void addLast(T newLast) override;
     T removeFirst() override;
