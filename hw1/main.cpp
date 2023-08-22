@@ -26,11 +26,11 @@ int main() {
     queue -> printDeque();
     queue -> removeLast();
     queue -> removeFirst();
-    queue -> removeFirst();
-    queue -> removeFirst();
-    queue -> removeFirst();
-    queue -> removeFirst();
-    queue -> removeFirst();
+    queue -> removeLast();
+    queue -> removeLast();
+    queue -> removeLast();
+    queue -> removeLast();
+    queue -> removeLast();
     cout << "Double ended queue after remove elements(implemented with array):" << endl;
     queue -> printDeque();
     cout << "The first element in the queue: \n" << queue -> get(0) << endl;
