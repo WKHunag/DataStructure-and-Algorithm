@@ -12,14 +12,14 @@ Deque_Arr<T>::Deque_Arr(int initialCapacity) : capacity(initialCapacity) {
 template<typename T>
 void Deque_Arr<T>::resize() {
     double usage = length / (double)capacity;
-    if (usage <= 0.25 && capacity <= 10 || (!isFull() && usage > 0.25)) return;
+    if ((usage <= 0.25 && capacity <= 10) || (!isFull() && usage > 0.25)) return;
 
     int newCapacity = usage <= 0.25 ? capacity / 2 : capacity * 2;
     T* newArr = new T[newCapacity];
-    int iter_times =  (capacity-headIndex-1) >= tailIndex ? capacity - headIndex - 1 : tailIndex;
-    for (int i = 0; i <= iter_times; i++) {
-        newArr[newCapacity - i] = arr[capacity - i];
-        newArr[i] = i <= tailIndex ? arr[i] : arr[capacity - i];
+    int iter_times =  fmax((capacity-headIndex-1), (tailIndex-1));
+    for (int i = 0; i < iter_times; i++) {
+        newArr[newCapacity - 1 - i] = arr[capacity - 1 - i];
+        newArr[i] = arr[i];
     }
     headIndex = newCapacity - (capacity - headIndex);
     capacity = newCapacity;
@@ -99,7 +99,7 @@ T Deque_Arr<T>::get(int index) const {
         throw std::out_of_range("Error: Index is out of range");
     }
 
-    return index + headIndex + 1 <= capacity - 1 ? arr[index + headIndex + 1] : arr[index + headIndex - capacity + 1];
+    return arr[(index + headIndex + 1) % capacity];
 }
 
 template<typename T>
@@ -109,9 +109,8 @@ void Deque_Arr<T>::printDeque() const {
         return;
     }
     std::cout << "[ ";
-    for (int i = 0; i < length; i++) {
-        int cur =  i + headIndex + 1 <= capacity - 1 ? arr[i + headIndex + 1] : arr[i + headIndex - capacity + 1];
-        std::cout << cur << " ";
+    for (int i = (headIndex + 1); i < (headIndex + 1 + length); i++) {
+        std::cout << arr[i % capacity] << " ";
     }
     std::cout << "]" << std::endl;
 }
