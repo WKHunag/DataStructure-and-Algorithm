@@ -94,6 +94,9 @@ void Deque_Arr<T>::printDeque() const {
     for (int i = headIndex + 1; i < (headIndex + 1 + length); i++) {
         std::cout << arr[i % capacity] << " ";
     }
+//    for (int i = 0; i < capacity; i++) {
+//        std::cout << arr[i] << " ";
+//    }
     std::cout << "]" << std::endl;
 }
 
@@ -107,7 +110,7 @@ void Deque_Arr<T>::resize() {
     int iter_times = length / 2;
     for (int i = iter_times; i > 0; i--) {
         newArr[newCapacity - i] = this -> get(length / 2 - i);
-        newArr[length / 2 - (length / 2 - i)] = this -> get(length - 1 - (length / 2 - i));
+        newArr[length / 2 - 1 - (length / 2 - i)] = this -> get(length - 1 - (length / 2 - i));
     }
 
     headIndex = newCapacity - length / 2 - 1;

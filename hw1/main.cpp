@@ -24,18 +24,13 @@ int main() {
     queue -> addLast(15);
     cout << "Double ended queue(implemented with array):" << endl;
     queue -> printDeque();
+
     queue -> removeFirst();
-    queue -> printDeque();
     queue -> removeFirst();
-    queue -> printDeque();
     queue -> removeFirst();
-    queue -> printDeque();
     queue -> removeFirst();
-    queue -> printDeque();
     queue -> removeFirst();
-    queue -> printDeque();
     queue -> removeFirst();
-    queue -> printDeque();
     queue -> removeFirst();
     cout << "Double ended queue after remove elements(implemented with array):" << endl;
     queue -> printDeque();
