@@ -18,9 +18,7 @@ private:
     TreeNode<T> *inserting(TreeNode<T> *node, TreeNode<T> *newParent, const T& item);
     void InOrder(TreeNode<T> *node) const;
     void CuttingDown(TreeNode<T> *node);
-    // For implement Balance Binary Search Tree
-    int height(TreeNode<T> *node);
-    void balance();
+    TreeNode *findMax(TreeNode<T> *node);
 
 public:
     BST();

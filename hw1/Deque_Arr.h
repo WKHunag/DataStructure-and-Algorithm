@@ -18,7 +18,7 @@ private:
     void resize();
 
 public:
-    Deque_Arr(int initialCapacity = 10);
+    Deque_Arr(int initialCapacity = 8);
     int size() const override;
     bool isEmpty() const override;
     bool isFull() const;

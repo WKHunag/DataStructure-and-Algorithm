@@ -10,24 +10,6 @@ Deque_Arr<T>::Deque_Arr(int initialCapacity) : capacity(initialCapacity) {
 };
 
 template<typename T>
-void Deque_Arr<T>::resize() {
-    double usage = length / (double)capacity;
-    if ((usage <= 0.25 && capacity <= 10) || (!isFull() && usage > 0.25)) return;
-
-    int newCapacity = usage <= 0.25 ? capacity / 2 : capacity * 2;
-    T* newArr = new T[newCapacity];
-    int iter_times =  fmax((capacity-headIndex-1), (tailIndex-1));
-    for (int i = 0; i < iter_times; i++) {
-        newArr[newCapacity - 1 - i] = arr[capacity - 1 - i];
-        newArr[i] = arr[i];
-    }
-    headIndex = newCapacity - (capacity - headIndex);
-    capacity = newCapacity;
-    delete[] arr;
-    arr = newArr;
-}
-
-template<typename T>
 Deque_Arr<T>::~Deque_Arr() {
     delete[] arr;
 }
@@ -44,7 +26,7 @@ bool Deque_Arr<T>::isEmpty() const {
 
 template<typename T>
 bool Deque_Arr<T>::isFull() const {
-    return (headIndex < tailIndex);
+    return length == capacity;
 }
 
 template<typename T>
@@ -69,8 +51,8 @@ T Deque_Arr<T>::removeFirst() {
         throw std::underflow_error("Error: Attempt to access data from an empty deque.");
     }
 
+    headIndex = (headIndex + 1) % capacity;
     T poppedValue = arr[headIndex];
-    headIndex++;
     length--;
     resize();
     return poppedValue;
@@ -82,8 +64,8 @@ T Deque_Arr<T>::removeLast() {
         throw std::underflow_error("Error: Attempt to access data from an empty deque.");
     }
 
+    tailIndex = (tailIndex - 1) % capacity;
     T poppedValue = arr[tailIndex];
-    tailIndex--;
     length--;
     resize();
     return poppedValue;
@@ -109,8 +91,28 @@ void Deque_Arr<T>::printDeque() const {
         return;
     }
     std::cout << "[ ";
-    for (int i = (headIndex + 1); i < (headIndex + 1 + length); i++) {
+    for (int i = headIndex + 1; i < (headIndex + 1 + length); i++) {
         std::cout << arr[i % capacity] << " ";
     }
     std::cout << "]" << std::endl;
+}
+
+template<typename T>
+void Deque_Arr<T>::resize() {
+    double usage = length / (double)capacity;
+    if ((usage <= 0.25 && capacity <= 8) || (!isFull() && usage > 0.25)) return;
+
+    int newCapacity = usage <= 0.25 ? capacity / 2 : capacity * 2;
+    T* newArr = new T[newCapacity];
+    int iter_times = length / 2;
+    for (int i = iter_times; i > 0; i--) {
+        newArr[newCapacity - i] = this -> get(length / 2 - i);
+        newArr[length / 2 - (length / 2 - i)] = this -> get(length - 1 - (length / 2 - i));
+    }
+
+    headIndex = newCapacity - length / 2 - 1;
+    tailIndex = length / 2;
+    capacity = newCapacity;
+    delete[] arr;
+    arr = newArr;
 }
