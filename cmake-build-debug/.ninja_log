@@ -1,0 +1,30 @@
+# ninja log v5
+25	44	1693707317715135000	Binary Search Tree/libBinarySearchTree_lib.a	e8f0917ca10a70d1
+4	25	1693707317693363444	Binary Search Tree/CMakeFiles/BinarySearchTree_lib.dir/emtpy.cpp.o	8fb6c5ad904c221e
+5	21	1693708302893116953	Deque/CMakeFiles/Deque_lib.dir/empty.cpp.o	786893b9c565ded8
+0	69	1693718333819690990	build.ninja	52c802be8ae2e5a8
+6	382	1693740643228376314	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
+21	36	1693708302909464000	Deque/libDeque_lib.a	7b24539026e9dde9
+382	419	1693740643268159237	Data_Structure_and_Algorithm	f62c13edd6f78d63
+6	387	1693740863552208793	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
+387	423	1693740863590307831	Data_Structure_and_Algorithm	f62c13edd6f78d63
+5	380	1693740888489034943	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
+380	412	1693740888523087932	Data_Structure_and_Algorithm	f62c13edd6f78d63
+6	374	1693740901812546397	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
+374	405	1693740901845375076	Data_Structure_and_Algorithm	f62c13edd6f78d63
+5	378	1693740920544633239	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
+378	409	1693740920577631456	Data_Structure_and_Algorithm	f62c13edd6f78d63
+6	387	1693740930708260011	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
+387	420	1693740930743099777	Data_Structure_and_Algorithm	f62c13edd6f78d63
+6	394	1693740942558188033	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
+394	426	1693740942591991902	Data_Structure_and_Algorithm	f62c13edd6f78d63
+6	382	1693740950298442865	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
+382	413	1693740950330951883	Data_Structure_and_Algorithm	f62c13edd6f78d63
+5	378	1693741066962187753	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
+378	409	1693741066995176095	Data_Structure_and_Algorithm	f62c13edd6f78d63
+6	374	1693741097702246498	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
+374	406	1693741097735754080	Data_Structure_and_Algorithm	f62c13edd6f78d63
+5	379	1693741102666718805	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
+379	410	1693741102699950559	Data_Structure_and_Algorithm	f62c13edd6f78d63
+5	368	1693741108471409459	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
+368	400	1693741108504675921	Data_Structure_and_Algorithm	f62c13edd6f78d63
