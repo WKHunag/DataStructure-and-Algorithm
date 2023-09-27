@@ -1,32 +1,54 @@
 # ninja log v5
-25	44	1693707317715135000	Binary Search Tree/libBinarySearchTree_lib.a	e8f0917ca10a70d1
-4	25	1693707317693363444	Binary Search Tree/CMakeFiles/BinarySearchTree_lib.dir/emtpy.cpp.o	8fb6c5ad904c221e
-5	21	1693708302893116953	Deque/CMakeFiles/Deque_lib.dir/empty.cpp.o	786893b9c565ded8
-0	69	1693718333819690990	build.ninja	52c802be8ae2e5a8
-6	382	1693740643228376314	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
-21	36	1693708302909464000	Deque/libDeque_lib.a	7b24539026e9dde9
-382	419	1693740643268159237	Data_Structure_and_Algorithm	f62c13edd6f78d63
-6	387	1693740863552208793	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
-387	423	1693740863590307831	Data_Structure_and_Algorithm	f62c13edd6f78d63
-5	380	1693740888489034943	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
-380	412	1693740888523087932	Data_Structure_and_Algorithm	f62c13edd6f78d63
-6	374	1693740901812546397	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
-374	405	1693740901845375076	Data_Structure_and_Algorithm	f62c13edd6f78d63
-5	378	1693740920544633239	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
-378	409	1693740920577631456	Data_Structure_and_Algorithm	f62c13edd6f78d63
-6	387	1693740930708260011	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
-387	420	1693740930743099777	Data_Structure_and_Algorithm	f62c13edd6f78d63
-6	394	1693740942558188033	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
-394	426	1693740942591991902	Data_Structure_and_Algorithm	f62c13edd6f78d63
-6	382	1693740950298442865	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
-382	413	1693740950330951883	Data_Structure_and_Algorithm	f62c13edd6f78d63
-5	378	1693741066962187753	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
-378	409	1693741066995176095	Data_Structure_and_Algorithm	f62c13edd6f78d63
-6	374	1693741097702246498	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
-374	406	1693741097735754080	Data_Structure_and_Algorithm	f62c13edd6f78d63
-5	379	1693741102666718805	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
-379	410	1693741102699950559	Data_Structure_and_Algorithm	f62c13edd6f78d63
-5	368	1693741108471409459	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
-368	400	1693741108504675921	Data_Structure_and_Algorithm	f62c13edd6f78d63
-5	389	1693741547047995562	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	249a1b735237687e
-389	425	1693741547086588758	Data_Structure_and_Algorithm	f62c13edd6f78d63
+429	2010	1693745655332949730	Catch_tests/Catch_tests_run_tests-b12d07c.cmake	dbf196fe35eb4d45
+1	147	1693745204445294114	Catch_tests/CMakeFiles/Catch_tests_run.dir/Deque_tests/BinarySearchTree_test.cpp.o	3148bf46379523b0
+429	2010	1693745655332949730	/Users/kai/CLionProjects/homework/cmake-build-debug/Catch_tests/Catch_tests_run_tests-b12d07c.cmake	dbf196fe35eb4d45
+4	2069	1694732459172130390	Catch_tests/CMakeFiles/Catch_tests_run.dir/Deque_tests/Deque_test.cpp.o	f96f3ebb90217793
+406	441	1695786234686211995	Data_Structure_and_Algorithm	968a8ad7cee401a9
+6	406	1695786234648842725	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	ef7cbf0b43579c3d
+0	58	1695786543639766642	build.ninja	52c802be8ae2e5a8
+429	2010	1693745655332949730	Catch_tests/Catch_tests_run	dbf196fe35eb4d45
+7	134	1695625401261003255	Deque/CMakeFiles/Deque_lib.dir/empty.cpp.o	453f475736254da5
+7	134	1695625401261003130	Binary Search Tree/CMakeFiles/BinarySearchTree_lib.dir/emtpy.cpp.o	f348bf8a9a20e8fa
+7	134	1695625401261010130	Hash Table/CMakeFiles/HashTable_lib.dir/empty.cpp.o	da31012191f95860
+5	429	1693745653749078517	Catch_tests/CMakeFiles/Catch_tests_run.dir/BinarySearchTree_tests/BinarySearchTree_test.cpp.o	b0ccff8792a7bb6d
+134	199	1695625401328537000	Binary Search Tree/libBinarySearchTree_lib.a	e8f0917ca10a70d1
+134	199	1695625401328536000	Deque/libDeque_lib.a	7b24539026e9dde9
+134	198	1695625401328435000	Hash Table/libHashTable_lib.a	6773235968faa730
+9	607	1695794559933339878	Catch_tests/CMakeFiles/Catch_tests_run.dir/BinarySearchTree_tests/BinarySearchTree_test.cpp.o	88de403c56d99b9e
+10	636	1695794559964102572	Catch_tests/CMakeFiles/Catch_tests_run.dir/HashTable_tests/HashTable_tests.cpp.o	47cf83cf176e0676
+6	472	1695794899919049541	Catch_tests/CMakeFiles/Catch_tests_run.dir/Deque_tests/Deque_test.cpp.o	e7d7a927a4002a7b
+472	908	1695794900357835891	Catch_tests/Catch_tests_run	1eb9826050c6c266
+472	908	1695794900357835891	Catch_tests/Catch_tests_run_tests-b12d07c.cmake	1eb9826050c6c266
+472	908	1695794900357835891	/Users/kai/CLionProjects/homework/cmake-build-debug/Catch_tests/Catch_tests_run_tests-b12d07c.cmake	1eb9826050c6c266
+6	460	1695795029860501441	Catch_tests/CMakeFiles/Catch_tests_run.dir/HashTable_tests/HashTable_tests.cpp.o	47cf83cf176e0676
+460	830	1695795030232335834	Catch_tests/Catch_tests_run	1eb9826050c6c266
+460	830	1695795030232335834	Catch_tests/Catch_tests_run_tests-b12d07c.cmake	1eb9826050c6c266
+460	830	1695795030232335834	/Users/kai/CLionProjects/homework/cmake-build-debug/Catch_tests/Catch_tests_run_tests-b12d07c.cmake	1eb9826050c6c266
+6	459	1695795131335798822	Catch_tests/CMakeFiles/Catch_tests_run.dir/HashTable_tests/HashTable_tests.cpp.o	47cf83cf176e0676
+460	832	1695795131710082331	Catch_tests/Catch_tests_run	1eb9826050c6c266
+460	832	1695795131710082331	Catch_tests/Catch_tests_run_tests-b12d07c.cmake	1eb9826050c6c266
+460	832	1695795131710082331	/Users/kai/CLionProjects/homework/cmake-build-debug/Catch_tests/Catch_tests_run_tests-b12d07c.cmake	1eb9826050c6c266
+6	458	1695795619917112749	Catch_tests/CMakeFiles/Catch_tests_run.dir/HashTable_tests/HashTable_tests.cpp.o	47cf83cf176e0676
+458	834	1695795620295283994	Catch_tests/Catch_tests_run	1eb9826050c6c266
+458	834	1695795620295283994	Catch_tests/Catch_tests_run_tests-b12d07c.cmake	1eb9826050c6c266
+458	834	1695795620295283994	/Users/kai/CLionProjects/homework/cmake-build-debug/Catch_tests/Catch_tests_run_tests-b12d07c.cmake	1eb9826050c6c266
+6	468	1695796004942528330	Catch_tests/CMakeFiles/Catch_tests_run.dir/HashTable_tests/HashTable_tests.cpp.o	47cf83cf176e0676
+469	850	1695796005326133762	Catch_tests/Catch_tests_run	1eb9826050c6c266
+469	850	1695796005326133762	Catch_tests/Catch_tests_run_tests-b12d07c.cmake	1eb9826050c6c266
+469	850	1695796005326133762	/Users/kai/CLionProjects/homework/cmake-build-debug/Catch_tests/Catch_tests_run_tests-b12d07c.cmake	1eb9826050c6c266
+7	433	1695796107565490436	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	ef7cbf0b43579c3d
+433	470	1695796107604124624	Data_Structure_and_Algorithm	968a8ad7cee401a9
+6	387	1695796124012372119	CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o	ef7cbf0b43579c3d
+387	420	1695796124046927114	Data_Structure_and_Algorithm	968a8ad7cee401a9
+9	456	1695796175605557529	Catch_tests/CMakeFiles/Catch_tests_run.dir/HashTable_tests/HashTable_tests.cpp.o	47cf83cf176e0676
+456	814	1695796175965176134	Catch_tests/Catch_tests_run	1eb9826050c6c266
+456	814	1695796175965176134	Catch_tests/Catch_tests_run_tests-b12d07c.cmake	1eb9826050c6c266
+456	814	1695796175965176134	/Users/kai/CLionProjects/homework/cmake-build-debug/Catch_tests/Catch_tests_run_tests-b12d07c.cmake	1eb9826050c6c266
+6	474	1695796241835460680	Catch_tests/CMakeFiles/Catch_tests_run.dir/HashTable_tests/HashTable_tests.cpp.o	47cf83cf176e0676
+474	836	1695796242199333186	Catch_tests/Catch_tests_run	1eb9826050c6c266
+474	836	1695796242199333186	Catch_tests/Catch_tests_run_tests-b12d07c.cmake	1eb9826050c6c266
+474	836	1695796242199333186	/Users/kai/CLionProjects/homework/cmake-build-debug/Catch_tests/Catch_tests_run_tests-b12d07c.cmake	1eb9826050c6c266
+5	471	1695796471182030788	Catch_tests/CMakeFiles/Catch_tests_run.dir/HashTable_tests/HashTable_tests.cpp.o	47cf83cf176e0676
+471	849	1695796471562257941	Catch_tests/Catch_tests_run	1eb9826050c6c266
+471	849	1695796471562257941	Catch_tests/Catch_tests_run_tests-b12d07c.cmake	1eb9826050c6c266
+471	849	1695796471562257941	/Users/kai/CLionProjects/homework/cmake-build-debug/Catch_tests/Catch_tests_run_tests-b12d07c.cmake	1eb9826050c6c266

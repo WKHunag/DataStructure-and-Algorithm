@@ -1,19 +1,15 @@
 #include <iostream>
 #include <random>
+#include "Hash Table/HashTable_Chaining.h"
 #include "Binary Search Tree/BST.h"
 
 int main() {
     BinarySearchTree<int>* bst = new BST<int>();
-
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<int> distribution(1, 100);
-
-    for (int i = 0; i < 3; ++i) {  // Adjust the loop count as needed
-        int randomNum = distribution(gen);
-        bst -> insertion(randomNum);
+    HashTable<int, int>* table = new HashTable_Chaining<int, int>();
+    for (int i=0; i<100; i++) {
+        table -> insertion(i, i+1);
     }
 
-    bst -> printTree();
+    std::cout << table -> get(99) << std::endl;
     return 0;
 }

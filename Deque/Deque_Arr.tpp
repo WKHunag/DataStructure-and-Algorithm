@@ -94,9 +94,6 @@ void Deque_Arr<T>::printDeque() const {
     for (int i = headIndex + 1; i < (headIndex + 1 + length); i++) {
         std::cout << arr[i % capacity] << " ";
     }
-//    for (int i = 0; i < capacity; i++) {
-//        std::cout << arr[i] << " ";
-//    }
     std::cout << "]" << std::endl;
 }
 

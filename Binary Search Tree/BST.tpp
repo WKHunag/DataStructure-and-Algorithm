@@ -10,7 +10,7 @@ BST<T>::BST() = default;
 
 template<typename T>
 void BST<T>::CuttingDown(TreeNode<T> *node) {
-    if (node != 0) {
+    if (node != nullptr) {
         CuttingDown(node -> left);
         CuttingDown(node -> right);
         delete node;
@@ -45,13 +45,14 @@ int BST<T>::size() {
 
 template<typename T>
 TreeNode<T>* BST<T>::inserting(TreeNode<T>* node, TreeNode<T>* newParent, const T& item) {
-    if (node == 0) {
+    if (node == nullptr) {
+        quantity++;
         return new TreeNode<T>(item, newParent);
     }
 
     if (node -> value > item) {
         node -> left = inserting(node -> left, node, item);
-    } else {
+    } else if (node -> value < item) {
         node -> right = inserting(node -> right, node, item);
     }
     return node;
@@ -60,7 +61,6 @@ TreeNode<T>* BST<T>::inserting(TreeNode<T>* node, TreeNode<T>* newParent, const 
 template<typename T>
 void BST<T>::insertion(const T& item) {
     root = inserting(root, nullptr, item);
-    quantity++;
 }
 
 template<typename T>
@@ -76,6 +76,7 @@ TreeNode<T>* BST<T>::deleting(TreeNode<T>* node, const T& item) {
     } else {
         TreeNode<T>* temp;
         if (node -> right == nullptr && node -> left == nullptr){
+            quantity--;
             delete node;
             return nullptr;
         } else if (node -> left == nullptr) {
@@ -87,8 +88,6 @@ TreeNode<T>* BST<T>::deleting(TreeNode<T>* node, const T& item) {
             node -> value = temp -> value;
             node -> left = deleting(node -> left, node -> value);
         }
-        temp = nullptr;
-        delete temp;
     }
     return node;
 }
@@ -119,7 +118,10 @@ bool BST<T>::search(const T& item) const {
 
 template<typename T>
 const T& BST<T>::top() const {
-    return root -> value;
+    if (root == nullptr) {
+        throw std::invalid_argument("Error: Tree is empty");
+    }
+    return root -> value ;
 }
 
 template <typename T>
