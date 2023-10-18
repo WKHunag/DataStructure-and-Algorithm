@@ -47,12 +47,12 @@ cmake_ninja_workdir = /Users/kai/CLionProjects/homework/cmake-build-debug/
 #############################################
 # Order-only phony target for Data_Structure_and_Algorithm
 
-build cmake_object_order_depends_target_Data_Structure_and_Algorithm: phony || cmake_object_order_depends_target_BinarySearchTree_lib cmake_object_order_depends_target_Deque_lib cmake_object_order_depends_target_HashTable_lib
+build cmake_object_order_depends_target_Data_Structure_and_Algorithm: phony || cmake_object_order_depends_target_BinarySearchTree_lib cmake_object_order_depends_target_Deque_lib cmake_object_order_depends_target_HashTable_lib cmake_object_order_depends_target_Heap_lib
 
 build CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o: CXX_COMPILER__Data_Structure_and_Algorithm_unscanned_Debug /Users/kai/CLionProjects/homework/main.cpp || cmake_object_order_depends_target_Data_Structure_and_Algorithm
   DEP_FILE = CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/kai/CLionProjects/homework/Deque -I"/Users/kai/CLionProjects/homework/Binary Search Tree" -I"/Users/kai/CLionProjects/homework/Hash Table"
+  INCLUDES = -I/Users/kai/CLionProjects/homework/Deque -I"/Users/kai/CLionProjects/homework/Binary Search Tree" -I"/Users/kai/CLionProjects/homework/Hash Table" -I/Users/kai/CLionProjects/homework/Heap
   OBJECT_DIR = CMakeFiles/Data_Structure_and_Algorithm.dir
   OBJECT_FILE_DIR = CMakeFiles/Data_Structure_and_Algorithm.dir
 
@@ -64,9 +64,9 @@ build CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o: CXX_COMPILER__Data
 #############################################
 # Link the executable Data_Structure_and_Algorithm
 
-build Data_Structure_and_Algorithm: CXX_EXECUTABLE_LINKER__Data_Structure_and_Algorithm_Debug CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o | Deque/libDeque_lib.a Binary$ Search$ Tree/libBinarySearchTree_lib.a Hash$ Table/libHashTable_lib.a || Binary$ Search$ Tree/libBinarySearchTree_lib.a Deque/libDeque_lib.a Hash$ Table/libHashTable_lib.a
+build Data_Structure_and_Algorithm: CXX_EXECUTABLE_LINKER__Data_Structure_and_Algorithm_Debug CMakeFiles/Data_Structure_and_Algorithm.dir/main.cpp.o | Deque/libDeque_lib.a Binary$ Search$ Tree/libBinarySearchTree_lib.a Hash$ Table/libHashTable_lib.a Heap/libHeap_lib.a || Binary$ Search$ Tree/libBinarySearchTree_lib.a Deque/libDeque_lib.a Hash$ Table/libHashTable_lib.a Heap/libHeap_lib.a
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
-  LINK_LIBRARIES = Deque/libDeque_lib.a  "Binary Search Tree/libBinarySearchTree_lib.a"  "Hash Table/libHashTable_lib.a"
+  LINK_LIBRARIES = Deque/libDeque_lib.a  "Binary Search Tree/libBinarySearchTree_lib.a"  "Hash Table/libHashTable_lib.a"  Heap/libHeap_lib.a
   OBJECT_DIR = CMakeFiles/Data_Structure_and_Algorithm.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -113,7 +113,7 @@ build cmake_object_order_depends_target_Deque_lib: phony || Deque/CMakeFiles/Deq
 build Deque/CMakeFiles/Deque_lib.dir/empty.cpp.o: CXX_COMPILER__Deque_lib_unscanned_Debug /Users/kai/CLionProjects/homework/Deque/empty.cpp || cmake_object_order_depends_target_Deque_lib
   DEP_FILE = Deque/CMakeFiles/Deque_lib.dir/empty.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/kai/CLionProjects/homework/Deque -I"/Users/kai/CLionProjects/homework/Binary Search Tree" -I"/Users/kai/CLionProjects/homework/Hash Table"
+  INCLUDES = -I/Users/kai/CLionProjects/homework/Deque -I"/Users/kai/CLionProjects/homework/Binary Search Tree" -I"/Users/kai/CLionProjects/homework/Hash Table" -I/Users/kai/CLionProjects/homework/Heap
   OBJECT_DIR = Deque/CMakeFiles/Deque_lib.dir
   OBJECT_FILE_DIR = Deque/CMakeFiles/Deque_lib.dir
 
@@ -174,7 +174,7 @@ build cmake_object_order_depends_target_BinarySearchTree_lib: phony || Binary$ S
 build Binary$ Search$ Tree/CMakeFiles/BinarySearchTree_lib.dir/emtpy.cpp.o: CXX_COMPILER__BinarySearchTree_lib_unscanned_Debug /Users/kai/CLionProjects/homework/Binary$ Search$ Tree/emtpy.cpp || cmake_object_order_depends_target_BinarySearchTree_lib
   DEP_FILE = "Binary Search Tree/CMakeFiles/BinarySearchTree_lib.dir/emtpy.cpp.o.d"
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/kai/CLionProjects/homework/Deque -I"/Users/kai/CLionProjects/homework/Binary Search Tree" -I"/Users/kai/CLionProjects/homework/Hash Table"
+  INCLUDES = -I/Users/kai/CLionProjects/homework/Deque -I"/Users/kai/CLionProjects/homework/Binary Search Tree" -I"/Users/kai/CLionProjects/homework/Hash Table" -I/Users/kai/CLionProjects/homework/Heap
   OBJECT_DIR = "Binary Search Tree/CMakeFiles/BinarySearchTree_lib.dir"
   OBJECT_FILE_DIR = "Binary Search Tree/CMakeFiles/BinarySearchTree_lib.dir"
 
@@ -235,7 +235,7 @@ build cmake_object_order_depends_target_HashTable_lib: phony || Hash$ Table/CMak
 build Hash$ Table/CMakeFiles/HashTable_lib.dir/empty.cpp.o: CXX_COMPILER__HashTable_lib_unscanned_Debug /Users/kai/CLionProjects/homework/Hash$ Table/empty.cpp || cmake_object_order_depends_target_HashTable_lib
   DEP_FILE = "Hash Table/CMakeFiles/HashTable_lib.dir/empty.cpp.o.d"
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/kai/CLionProjects/homework/Deque -I"/Users/kai/CLionProjects/homework/Binary Search Tree" -I"/Users/kai/CLionProjects/homework/Hash Table"
+  INCLUDES = -I/Users/kai/CLionProjects/homework/Deque -I"/Users/kai/CLionProjects/homework/Binary Search Tree" -I"/Users/kai/CLionProjects/homework/Hash Table" -I/Users/kai/CLionProjects/homework/Heap
   OBJECT_DIR = "Hash Table/CMakeFiles/HashTable_lib.dir"
   OBJECT_FILE_DIR = "Hash Table/CMakeFiles/HashTable_lib.dir"
 
@@ -285,6 +285,67 @@ build Hash$ Table/rebuild_cache: phony Hash$ Table/CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 # =============================================================================
+# Object build statements for STATIC_LIBRARY target Heap_lib
+
+
+#############################################
+# Order-only phony target for Heap_lib
+
+build cmake_object_order_depends_target_Heap_lib: phony || Heap/CMakeFiles/Heap_lib.dir
+
+build Heap/CMakeFiles/Heap_lib.dir/empty.cpp.o: CXX_COMPILER__Heap_lib_unscanned_Debug /Users/kai/CLionProjects/homework/Heap/empty.cpp || cmake_object_order_depends_target_Heap_lib
+  DEP_FILE = Heap/CMakeFiles/Heap_lib.dir/empty.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/kai/CLionProjects/homework/Deque -I"/Users/kai/CLionProjects/homework/Binary Search Tree" -I"/Users/kai/CLionProjects/homework/Hash Table" -I/Users/kai/CLionProjects/homework/Heap
+  OBJECT_DIR = Heap/CMakeFiles/Heap_lib.dir
+  OBJECT_FILE_DIR = Heap/CMakeFiles/Heap_lib.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target Heap_lib
+
+
+#############################################
+# Link the static library Heap/libHeap_lib.a
+
+build Heap/libHeap_lib.a: CXX_STATIC_LIBRARY_LINKER__Heap_lib_Debug Heap/CMakeFiles/Heap_lib.dir/empty.cpp.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = Heap/CMakeFiles/Heap_lib.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Heap/libHeap_lib.a
+  TARGET_PDB = Heap_lib.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build Heap/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/kai/CLionProjects/homework/cmake-build-debug/Heap && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Heap/edit_cache: phony Heap/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Heap/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/kai/CLionProjects/homework/cmake-build-debug/Heap && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/kai/CLionProjects/homework -B/Users/kai/CLionProjects/homework/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Heap/rebuild_cache: phony Heap/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/kai/CLionProjects/homework/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
 # Object build statements for EXECUTABLE target Catch_tests_run
 
 
@@ -296,21 +357,21 @@ build cmake_object_order_depends_target_Catch_tests_run: phony || cmake_object_o
 build Catch_tests/CMakeFiles/Catch_tests_run.dir/Deque_tests/Deque_test.cpp.o: CXX_COMPILER__Catch_tests_run_unscanned_Debug /Users/kai/CLionProjects/homework/Catch_tests/Deque_tests/Deque_test.cpp || cmake_object_order_depends_target_Catch_tests_run
   DEP_FILE = Catch_tests/CMakeFiles/Catch_tests_run.dir/Deque_tests/Deque_test.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/kai/CLionProjects/homework/Deque -I"/Users/kai/CLionProjects/homework/Binary Search Tree" -I"/Users/kai/CLionProjects/homework/Hash Table" -isystem /usr/local/include
+  INCLUDES = -I/Users/kai/CLionProjects/homework/Deque -I"/Users/kai/CLionProjects/homework/Binary Search Tree" -I"/Users/kai/CLionProjects/homework/Hash Table" -I/Users/kai/CLionProjects/homework/Heap -isystem /usr/local/include
   OBJECT_DIR = Catch_tests/CMakeFiles/Catch_tests_run.dir
   OBJECT_FILE_DIR = Catch_tests/CMakeFiles/Catch_tests_run.dir/Deque_tests
 
 build Catch_tests/CMakeFiles/Catch_tests_run.dir/BinarySearchTree_tests/BinarySearchTree_test.cpp.o: CXX_COMPILER__Catch_tests_run_unscanned_Debug /Users/kai/CLionProjects/homework/Catch_tests/BinarySearchTree_tests/BinarySearchTree_test.cpp || cmake_object_order_depends_target_Catch_tests_run
   DEP_FILE = Catch_tests/CMakeFiles/Catch_tests_run.dir/BinarySearchTree_tests/BinarySearchTree_test.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/kai/CLionProjects/homework/Deque -I"/Users/kai/CLionProjects/homework/Binary Search Tree" -I"/Users/kai/CLionProjects/homework/Hash Table" -isystem /usr/local/include
+  INCLUDES = -I/Users/kai/CLionProjects/homework/Deque -I"/Users/kai/CLionProjects/homework/Binary Search Tree" -I"/Users/kai/CLionProjects/homework/Hash Table" -I/Users/kai/CLionProjects/homework/Heap -isystem /usr/local/include
   OBJECT_DIR = Catch_tests/CMakeFiles/Catch_tests_run.dir
   OBJECT_FILE_DIR = Catch_tests/CMakeFiles/Catch_tests_run.dir/BinarySearchTree_tests
 
 build Catch_tests/CMakeFiles/Catch_tests_run.dir/HashTable_tests/HashTable_tests.cpp.o: CXX_COMPILER__Catch_tests_run_unscanned_Debug /Users/kai/CLionProjects/homework/Catch_tests/HashTable_tests/HashTable_tests.cpp || cmake_object_order_depends_target_Catch_tests_run
   DEP_FILE = Catch_tests/CMakeFiles/Catch_tests_run.dir/HashTable_tests/HashTable_tests.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/kai/CLionProjects/homework/Deque -I"/Users/kai/CLionProjects/homework/Binary Search Tree" -I"/Users/kai/CLionProjects/homework/Hash Table" -isystem /usr/local/include
+  INCLUDES = -I/Users/kai/CLionProjects/homework/Deque -I"/Users/kai/CLionProjects/homework/Binary Search Tree" -I"/Users/kai/CLionProjects/homework/Hash Table" -I/Users/kai/CLionProjects/homework/Heap -isystem /usr/local/include
   OBJECT_DIR = Catch_tests/CMakeFiles/Catch_tests_run.dir
   OBJECT_FILE_DIR = Catch_tests/CMakeFiles/Catch_tests_run.dir/HashTable_tests
 
@@ -366,11 +427,15 @@ build Deque_lib: phony Deque/libDeque_lib.a
 
 build HashTable_lib: phony Hash$ Table/libHashTable_lib.a
 
+build Heap_lib: phony Heap/libHeap_lib.a
+
 build libBinarySearchTree_lib.a: phony Binary$ Search$ Tree/libBinarySearchTree_lib.a
 
 build libDeque_lib.a: phony Deque/libDeque_lib.a
 
 build libHashTable_lib.a: phony Hash$ Table/libHashTable_lib.a
+
+build libHeap_lib.a: phony Heap/libHeap_lib.a
 
 # =============================================================================
 # Folder targets.
@@ -380,7 +445,7 @@ build libHashTable_lib.a: phony Hash$ Table/libHashTable_lib.a
 #############################################
 # Folder: /Users/kai/CLionProjects/homework/cmake-build-debug
 
-build all: phony Data_Structure_and_Algorithm Deque/all Binary$ Search$ Tree/all Hash$ Table/all Catch_tests/all
+build all: phony Data_Structure_and_Algorithm Deque/all Binary$ Search$ Tree/all Hash$ Table/all Heap/all Catch_tests/all
 
 # =============================================================================
 
@@ -411,20 +476,27 @@ build Deque/all: phony Deque/libDeque_lib.a
 build Hash$ Table/all: phony Hash$ Table/libHashTable_lib.a
 
 # =============================================================================
+
+#############################################
+# Folder: /Users/kai/CLionProjects/homework/cmake-build-debug/Heap
+
+build Heap/all: phony Heap/libHeap_lib.a
+
+# =============================================================================
 # Built-in targets
 
 
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Users/kai/CLionProjects/homework/Binary$ Search$ Tree/CMakeLists.txt /Users/kai/CLionProjects/homework/CMakeLists.txt /Users/kai/CLionProjects/homework/Catch_tests/CMakeLists.txt /Users/kai/CLionProjects/homework/Deque/CMakeLists.txt /Users/kai/CLionProjects/homework/Hash$ Table/CMakeLists.txt /usr/local/lib/cmake/Catch2/Catch.cmake /usr/local/lib/cmake/Catch2/Catch2Config.cmake /usr/local/lib/cmake/Catch2/Catch2ConfigVersion.cmake /usr/local/lib/cmake/Catch2/Catch2Targets-noconfig.cmake /usr/local/lib/cmake/Catch2/Catch2Targets.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Users/kai/CLionProjects/homework/Binary$ Search$ Tree/CMakeLists.txt /Users/kai/CLionProjects/homework/CMakeLists.txt /Users/kai/CLionProjects/homework/Catch_tests/CMakeLists.txt /Users/kai/CLionProjects/homework/Deque/CMakeLists.txt /Users/kai/CLionProjects/homework/Hash$ Table/CMakeLists.txt /Users/kai/CLionProjects/homework/Heap/CMakeLists.txt /usr/local/lib/cmake/Catch2/Catch.cmake /usr/local/lib/cmake/Catch2/Catch2Config.cmake /usr/local/lib/cmake/Catch2/Catch2ConfigVersion.cmake /usr/local/lib/cmake/Catch2/Catch2Targets-noconfig.cmake /usr/local/lib/cmake/Catch2/Catch2Targets.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Users/kai/CLionProjects/homework/Binary$ Search$ Tree/CMakeLists.txt /Users/kai/CLionProjects/homework/CMakeLists.txt /Users/kai/CLionProjects/homework/Catch_tests/CMakeLists.txt /Users/kai/CLionProjects/homework/Deque/CMakeLists.txt /Users/kai/CLionProjects/homework/Hash$ Table/CMakeLists.txt /usr/local/lib/cmake/Catch2/Catch.cmake /usr/local/lib/cmake/Catch2/Catch2Config.cmake /usr/local/lib/cmake/Catch2/Catch2ConfigVersion.cmake /usr/local/lib/cmake/Catch2/Catch2Targets-noconfig.cmake /usr/local/lib/cmake/Catch2/Catch2Targets.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
+build /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Users/kai/CLionProjects/homework/Binary$ Search$ Tree/CMakeLists.txt /Users/kai/CLionProjects/homework/CMakeLists.txt /Users/kai/CLionProjects/homework/Catch_tests/CMakeLists.txt /Users/kai/CLionProjects/homework/Deque/CMakeLists.txt /Users/kai/CLionProjects/homework/Hash$ Table/CMakeLists.txt /Users/kai/CLionProjects/homework/Heap/CMakeLists.txt /usr/local/lib/cmake/Catch2/Catch.cmake /usr/local/lib/cmake/Catch2/Catch2Config.cmake /usr/local/lib/cmake/Catch2/Catch2ConfigVersion.cmake /usr/local/lib/cmake/Catch2/Catch2Targets-noconfig.cmake /usr/local/lib/cmake/Catch2/Catch2Targets.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
 
 
 #############################################

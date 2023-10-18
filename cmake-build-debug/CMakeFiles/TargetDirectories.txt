@@ -10,6 +10,9 @@
 /Users/kai/CLionProjects/homework/cmake-build-debug/Hash Table/CMakeFiles/HashTable_lib.dir
 /Users/kai/CLionProjects/homework/cmake-build-debug/Hash Table/CMakeFiles/edit_cache.dir
 /Users/kai/CLionProjects/homework/cmake-build-debug/Hash Table/CMakeFiles/rebuild_cache.dir
+/Users/kai/CLionProjects/homework/cmake-build-debug/Heap/CMakeFiles/Heap_lib.dir
+/Users/kai/CLionProjects/homework/cmake-build-debug/Heap/CMakeFiles/edit_cache.dir
+/Users/kai/CLionProjects/homework/cmake-build-debug/Heap/CMakeFiles/rebuild_cache.dir
 /Users/kai/CLionProjects/homework/cmake-build-debug/Catch_tests/CMakeFiles/Catch_tests_run.dir
 /Users/kai/CLionProjects/homework/cmake-build-debug/Catch_tests/CMakeFiles/edit_cache.dir
 /Users/kai/CLionProjects/homework/cmake-build-debug/Catch_tests/CMakeFiles/rebuild_cache.dir

@@ -7,10 +7,11 @@ set(SOURCE_FILES main.cpp)
 
 add_executable(Data_Structure_and_Algorithm ${SOURCE_FILES})
 
-include_directories(Deque Binary\ Search\ Tree Hash\ Table)
+include_directories(Deque Binary\ Search\ Tree Hash\ Table Heap)
 add_subdirectory(Deque)
 add_subdirectory(Binary\ Search\ Tree)
 add_subdirectory(Hash\ Table)
-target_link_libraries(Data_Structure_and_Algorithm Deque_lib BinarySearchTree_lib HashTable_lib)
+add_subdirectory(Heap)
+target_link_libraries(Data_Structure_and_Algorithm Deque_lib BinarySearchTree_lib HashTable_lib Heap_lib)
 
 add_subdirectory(Catch_tests)
